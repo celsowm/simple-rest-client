@@ -105,4 +105,8 @@ public class RestService {
         uri += "/{id}";
         this.restTemplate.delete(uri, id);
     }
+
+    String getAsJSON(String uri) {
+        return this.restTemplate.getForObject(uri, String.class);
+    }
 }

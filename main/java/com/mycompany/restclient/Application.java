@@ -5,6 +5,7 @@
  */
 package com.mycompany.restclient;
 
+import com.mycompany.restclient.model.Post;
 import java.lang.reflect.Array;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -27,6 +28,10 @@ public class Application implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         String uri = "https://jsonplaceholder.typicode.com/posts";
+        
+        //teste get as string
+        String json = restService.getAsJSON(uri);
+        System.out.println(json);
         
         //teste get (all)
         Class vo = Post[].class;
